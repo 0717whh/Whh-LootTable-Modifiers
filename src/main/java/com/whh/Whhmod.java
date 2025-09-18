@@ -1,5 +1,7 @@
 package com.whh;
 
+import com.whh.command.CommandRegistry;
+import com.whh.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -18,7 +20,9 @@ public class Whhmod implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-
+        ModLootTableModifiers.modifyLootTable();
+        ModLootTableModifiers.initConfig();
+        CommandRegistry.register();
 		LOGGER.info("Hello Fabric world!");
 	}
 }
