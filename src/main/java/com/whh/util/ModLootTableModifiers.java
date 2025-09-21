@@ -24,7 +24,10 @@ public class ModLootTableModifiers {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             Identifier id = key.getValue();
 
-            if (id.getPath().startsWith("chests/")||id.getPath().startsWith("spawners/")) {
+            if (id.getPath().startsWith("chests/")||id.getPath().startsWith("spawners/")||
+                id.getPath().startsWith("chest/")||id.getPath().startsWith("spawner/")
+                )
+            {
 
                 // 遍历配置中的每个物品
                 for (ModConfig.Entry entry : CONFIG.entries) {
